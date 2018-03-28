@@ -25,7 +25,7 @@ public abstract class Collectable {
         return this.health;
     }
 
-    public int getName() {
+    public String getName() {
         return this.name;
     }
 }
