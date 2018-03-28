@@ -6,6 +6,16 @@ import java.util.Random;
  */
 public class MonsterInfo {
 
+    private static MonsterInfo ourInstance = new MonsterInfo();
+
+    public static MonsterInfo getInstance() {
+        return ourInstance;
+    }
+
+    private MonsterInfo() {
+    }
+
+
     public Enemy getMonster(int level) {
         Random rand = new Random();
         int num=rand.nextInt(3);

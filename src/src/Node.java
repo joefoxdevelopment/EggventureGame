@@ -10,7 +10,7 @@ public class Node {
     private Node east;
     private Node south;
     private Node west;
-    private ArrayList<Enemy> containedEnemies;
+    private Enemy enemy;
     private int gridX;
     private int gridY;
 
@@ -24,7 +24,7 @@ public class Node {
         this.east = null;
         this.south = null;
         this.west = null;
-        this.containedEnemies = new ArrayList<>();
+        this.enemy = null;
     }
 
     public Node(int gridX, int gridY)
@@ -37,7 +37,7 @@ public class Node {
         this.east = null;
         this.south = null;
         this.west = null;
-        this.containedEnemies = new ArrayList<>();
+        this.enemy = null;
     }
 
     public Node(int gridX, int gridY, Boolean hasUpstair, Boolean hasDownstair)
@@ -50,17 +50,17 @@ public class Node {
         this.east = null;
         this.south = null;
         this.west = null;
-        this.containedEnemies = new ArrayList<>();
+        this.enemy = null;
     }
 
-    public void setContainedEnemies(ArrayList<Enemy> containedEnemies)
+    public void setEnemy(Enemy enemy)
     {
-        this.containedEnemies = containedEnemies;
+        this.enemy = enemy;
     }
 
-    public ArrayList<Enemy> getContainedEnemies()
+    public Enemy getEnemy()
     {
-        return this.containedEnemies;
+        return this.enemy;
     }
 
     public Boolean hasUpstair()

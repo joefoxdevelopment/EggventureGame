@@ -14,11 +14,6 @@ public class MapGenerator {
     private MapGenerator() {
     }
 
-    public static void main(String[] args) {
-        MapGenerator.getInstance().generateMap(1, 20);
-
-    }
-
     public Node[][] generateMap(int level, int gridSize) {
         // grid generation
         // generate grid
@@ -108,6 +103,11 @@ public class MapGenerator {
             {
                 if (baseGrid[i][j] == true && nodeGrid[i][j] == null) {
                     nodeGrid[i][j] = new Node(i,j);
+                    int coinToss = new Random().nextInt(2);
+                    if (coinToss != 0)
+                    {
+                        nodeGrid[i][j].setEnemy(MonsterInfo.getInstance().getMonster(level));
+                    }
                 }
             }
         }
