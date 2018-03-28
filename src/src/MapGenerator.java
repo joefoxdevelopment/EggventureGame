@@ -42,7 +42,7 @@ public class MapGenerator {
                 baseGrid[i][j] = false;
             }
         }
-        
+
         baseGrid[startLocation[0][0]][startLocation[0][1]] = true;
 
         int[][] directions = {
