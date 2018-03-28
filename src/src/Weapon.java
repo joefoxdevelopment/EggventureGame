@@ -8,4 +8,6 @@ public class Weapon extends Collectable {
         this.attack = attack;
     }
 
+
+
 }
