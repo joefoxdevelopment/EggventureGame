@@ -12,4 +12,20 @@ public abstract class Collectable {
     public Collectable(String name) {
         this.name = name;
     }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public int getDefense() {
+        return this.defense;
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    public int getName() {
+        return this.name;
+    }
 }
