@@ -61,5 +61,14 @@ public class Node {
         return this.containedEnemies;
     }
 
+    public Boolean hasUpstair()
+    {
+        return this.hasUpstair;
+    }
+
+    public Boolean hasDownstair()
+    {
+        return this.hasDownstair;
+    }
 
 }
