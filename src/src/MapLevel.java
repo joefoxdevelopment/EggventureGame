@@ -13,4 +13,6 @@ public class MapLevel {
     }
 
 
+    public static Node getStartNode() {
+    }
 }

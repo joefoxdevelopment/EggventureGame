@@ -6,6 +6,13 @@ public abstract class Character {
     protected int attack;
     protected int defense;
 
+    /**
+     * All characters have an attack ability
+     * @return the total damage caused to the target
+     */
+    protected abstract int attack(int targetDefense);
+
+    //------GETTERS AND SETTERS-------
     public int getHealth() {
         return health;
     }

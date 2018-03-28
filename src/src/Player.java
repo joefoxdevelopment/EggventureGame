@@ -65,8 +65,32 @@ public class Player extends Character {
         return totalDefense;
     }
 
-
     //-----GETTERS AND SETTERS-----
+
+    public String currentExits(){
+        Boolean[] exits = location.getExits();
+
+        String exitsString = null;
+
+        if(exits[0]){
+            exitsString.concat("1. North");
+        }
+
+        if(exits[1]){
+            exitsString.concat(" 2. East");
+        }
+
+        if(exits[2]){
+            exitsString.concat(" 3. South");
+        }
+
+        if(exits[3]){
+            exitsString.concat(" 4. West");
+        }
+
+        return exitsString;
+    }
+
     public Node getLocation() {
         return location;
     }
