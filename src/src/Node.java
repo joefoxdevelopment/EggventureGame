@@ -6,7 +6,10 @@ import java.util.ArrayList;
 public class Node {
     private Boolean hasUpstair;
     private Boolean hasDownstair;
-    private ArrayList<Node> connectedNodes;
+    private Node north;
+    private Node east;
+    private Node south;
+    private Node west;
     private ArrayList<Enemy> containedEnemies;
     private int gridX;
     private int gridY;
@@ -17,7 +20,10 @@ public class Node {
         this.gridY = 0;
         this.hasUpstair = false;
         this.hasDownstair = false;
-        this.connectedNodes = new ArrayList<>();
+        this.north = null;
+        this.east = null;
+        this.south = null;
+        this.west = null;
         this.containedEnemies = new ArrayList<>();
     }
 
@@ -27,7 +33,10 @@ public class Node {
         this.gridY = gridY;
         this.hasUpstair = false;
         this.hasDownstair = false;
-        this.connectedNodes = new ArrayList<>();
+        this.north = null;
+        this.east = null;
+        this.south = null;
+        this.west = null;
         this.containedEnemies = new ArrayList<>();
     }
 
@@ -37,18 +46,11 @@ public class Node {
         this.gridY = gridY;
         this.hasUpstair = hasUpstair;
         this.hasDownstair = hasDownstair;
-        this.connectedNodes = new ArrayList<>();
+        this.north = null;
+        this.east = null;
+        this.south = null;
+        this.west = null;
         this.containedEnemies = new ArrayList<>();
-    }
-
-    public void setConnectedNodes(ArrayList<Node> connectedNodes)
-    {
-        this.connectedNodes = connectedNodes;
-    }
-
-    public ArrayList<Node> getConnectedNodes()
-    {
-        return this.connectedNodes;
     }
 
     public void setContainedEnemies(ArrayList<Enemy> containedEnemies)
@@ -71,4 +73,94 @@ public class Node {
         return this.hasDownstair;
     }
 
+    public void setNorth(Node north)
+    {
+        this.north = north;
+    }
+
+    public Node getNorth()
+    {
+        return this.north;
+    }
+
+    public Boolean hasNorth()
+    {
+        if (this.north == null)
+        {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void setEast(Node east)
+    {
+        this.east = east;
+    }
+
+    public Node getEast()
+    {
+        return this.east;
+    }
+
+    public Boolean hasEast()
+    {
+        if (this.east == null)
+        {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void setSouth(Node south)
+    {
+        this.south = south;
+    }
+
+    public Node getSouth()
+    {
+        return this.south;
+    }
+
+    public Boolean hasSouth()
+    {
+        if (this.south == null)
+        {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void setWest(Node west)
+    {
+        this.west = west;
+    }
+
+    public Node getWest()
+    {
+        return this.west;
+    }
+
+    public Boolean hasWest()
+    {
+        if (this.west == null)
+        {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public Boolean[] getExits()
+    {
+        Boolean[] exits = {
+                hasNorth(),
+                hasEast(),
+                hasSouth(),
+                hasWest()
+        };
+        return exits;
+    }
 }
